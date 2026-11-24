@@ -91,7 +91,7 @@ form button:hover { background: rgba(255, 255, 255, .16); } form button:disabled
   <div class="vcap" id="vCap"></div>
 </div>
 <script>
-const SALT = Uint8Array.from(atob("ds1OlXMv7/Azn0s95uEkHA=="), c => c.charCodeAt(0)), ITER = 600000;
+const SALT = Uint8Array.from(atob("6IU1Cwm85IUT61x20ogYjg=="), c => c.charCodeAt(0)), ITER = 600000, V = "e885350b";
 const CLIPS = [{ f: "film", n: "", type: "video/mp4", cap: [[0, ""]] }];
 const $ = id => document.getElementById(id);
 let KEY = null, cur = 0; const urls = {};
@@ -100,7 +100,7 @@ async function deriveKey(pw) {
   return crypto.subtle.deriveKey({ name: "PBKDF2", salt: SALT, iterations: ITER, hash: "SHA-256" }, m, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
 }
 async function open(url) {
-  const r = await fetch(url); if (!r.ok) throw new Error("load");
+  const r = await fetch(url.replace(".bin", "." + V + ".bin"), { cache: "no-store" }); if (!r.ok) throw new Error("load");
   const b = new Uint8Array(await r.arrayBuffer());
   return crypto.subtle.decrypt({ name: "AES-GCM", iv: b.slice(0, 12) }, KEY, b.slice(12));
 }
@@ -108,7 +108,7 @@ $("form").addEventListener("submit", async e => {
   e.preventDefault(); const pw = $("pw").value.trim(); if (!pw) return;
   $("go").disabled = true; $("msg").className = "msg"; $("msg").textContent = "Checking the password";
   try { KEY = await deriveKey(pw); await open("check.bin"); $("gate").hidden = true; $("menu").hidden = false; $("tApp").focus(); }
-  catch (x) { KEY = null; $("msg").className = "msg err"; $("msg").textContent = x.message === "load" ? "The page could not load its files. Check the connection and try again." : "That password does not open the prototype."; $("pw").select(); }
+  catch (x) { KEY = null; $("msg").className = "msg err"; $("msg").textContent = x.message === "load" ? "The page could not load its files. Reload the page (Ctrl+F5) and try again." : "That password does not open the prototype."; $("pw").select(); }
   $("go").disabled = false;
 });
 $("tApp").addEventListener("click", async () => {
