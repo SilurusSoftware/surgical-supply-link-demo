@@ -15,9 +15,9 @@ body::before { content: ""; position: fixed; inset: 0; background: var(--ice); o
 body::after { content: ""; position: fixed; inset: 0; background: #fff; opacity: .07; clip-path: polygon(45% 0, 100% 0, 100% 100%, 74% 100%); pointer-events: none; }
 [hidden] { display: none !important; }
 button { font: inherit; color: inherit; cursor: pointer; }
-.screen { position: relative; z-index: 1; height: 100%; display: grid; grid-template-rows: 48px 1fr auto; }
-.bar { background: rgba(7, 57, 79, .78); display: flex; align-items: center; padding: 0 24px; gap: 24px; }
-.bar .name { font-size: 20px; } .bar .grow { flex: 1; } .bar svg { height: 30px; width: auto; display: block; }
+.screen { position: relative; z-index: 1; height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+.bar { background: rgba(7, 57, 79, .78); display: flex; align-items: center; padding: 8px 24px; gap: 24px; min-height: 48px; }
+.bar .name { font-size: 20px; } .bar .grow { flex: 1; } .bar svg { height: 75px; width: auto; display: block; }
 .foot { background: rgba(7, 57, 79, .78); padding: 12px 24px; font-size: 16px; color: #cfe1e7; }
 .gate { display: grid; place-content: center; gap: 18px; padding: 24px; width: min(560px, 100%); margin: 0 auto; }
 h1 { font: 500 44px/1.1 var(--sans); margin: 0; } .lead { margin: 0; font-size: 20px; color: #cfe1e7; }
@@ -91,7 +91,7 @@ form button:hover { background: rgba(255, 255, 255, .16); } form button:disabled
   <div class="vcap" id="vCap"></div>
 </div>
 <script>
-const SALT = Uint8Array.from(atob("5PtNVd/VHcw14siaddLy6g=="), c => c.charCodeAt(0)), ITER = 600000;
+const SALT = Uint8Array.from(atob("2L6cBdmJvIC3P1QDo+zbYA=="), c => c.charCodeAt(0)), ITER = 600000;
 const CLIPS = [{ f: "film", n: "", type: "video/mp4", cap: [[0, ""]] }];
 const $ = id => document.getElementById(id);
 let KEY = null, cur = 0; const urls = {};
