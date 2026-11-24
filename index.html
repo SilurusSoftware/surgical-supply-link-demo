@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Surgical Supply Link</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;500&display=swap">
+<style>
+:root { --navy: #07394F; --petrol: #005A7C; --ocean: #087DA5; --steel: #388BAA; --ice: #59ABC5; --ink: #EAF2F4; --rule: rgba(255, 255, 255, .3); --sans: "Fira Sans Condensed", "Roboto Condensed", "Segoe UI", Arial, sans-serif; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { color: var(--ink); font: 400 18px/1.3 var(--sans); background: linear-gradient(125deg, var(--navy), var(--petrol) 22%, var(--ocean) 56%, var(--steel)); overflow: hidden; }
+body::before { content: ""; position: fixed; inset: 0; background: var(--ice); opacity: .18; clip-path: polygon(0 54%, 27% 100%, 0 100%); pointer-events: none; }
+body::after { content: ""; position: fixed; inset: 0; background: #fff; opacity: .07; clip-path: polygon(45% 0, 100% 0, 100% 100%, 74% 100%); pointer-events: none; }
+[hidden] { display: none !important; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.screen { position: relative; z-index: 1; height: 100%; display: grid; grid-template-rows: 48px 1fr auto; }
+.bar { background: rgba(7, 57, 79, .78); display: flex; align-items: center; padding: 0 24px; gap: 24px; }
+.bar .name { font-size: 20px; } .bar .grow { flex: 1; } .bar svg { height: 30px; width: auto; display: block; }
+.foot { background: rgba(7, 57, 79, .78); padding: 12px 24px; font-size: 16px; color: #cfe1e7; }
+.gate { display: grid; place-content: center; gap: 18px; padding: 24px; width: min(560px, 100%); margin: 0 auto; }
+h1 { font: 500 44px/1.1 var(--sans); margin: 0; } .lead { margin: 0; font-size: 20px; color: #cfe1e7; }
+form { display: grid; grid-template-columns: 1fr auto; gap: 0; margin-top: 10px; border: 1px solid var(--rule); }
+input { font: inherit; font-size: 20px; color: var(--navy); background: #fff; border: 0; padding: 14px 16px 12px; min-width: 0; border-radius: 0; }
+input:focus { outline: 2px solid var(--ice); outline-offset: -2px; }
+form button { border: 0; border-left: 1px solid var(--rule); background: rgba(255, 255, 255, .08); padding: 0 28px; font-size: 20px; min-height: 52px; }
+form button:hover { background: rgba(255, 255, 255, .16); } form button:disabled { opacity: .6; cursor: default; }
+.msg { min-height: 26px; margin: 0; font-size: 18px; } .msg.err { color: #ffd84a; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+.tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; padding: 20px; border: 0; border-right: 1px solid var(--rule); background: transparent; font: 400 26px/1.25 var(--sans); text-align: center; transition: background 150ms; }
+.tile:last-child { border-right: 0; } .tile:hover { background: rgba(255, 255, 255, .08); } .tile:active { background: rgba(0, 0, 0, .12); }
+.tile:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.tile svg { width: 110px; height: 110px; fill: none; stroke: currentColor; stroke-width: .7; stroke-linecap: round; stroke-linejoin: round; }
+.tile small { display: block; font-size: 18px; color: #cfe1e7; margin-top: 6px; }
+#app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; z-index: 5; background: var(--ocean); }
+#vid { position: fixed; inset: 0; z-index: 10; background: #052c3d; display: grid; grid-template-rows: 48px minmax(0, 1fr) auto; } #vid video { min-height: 0; }
+#vid video { width: 100%; height: 100%; object-fit: contain; background: #052c3d; display: block; }
+.vbar { background: rgba(7, 57, 79, .9); display: flex; align-items: stretch; }
+.vbar > * { display: flex; align-items: center; padding: 0 20px; border: 0; background: none; border-right: 1px solid var(--rule); min-height: 48px; }
+.vbar .t { flex: 1; font-size: 19px; } .vbar button:hover { background: rgba(255, 255, 255, .1); } .vbar button:disabled { opacity: .45; cursor: default; }
+.vcap { background: var(--navy); border-top: 1px solid var(--rule); padding: 14px 24px 12px; font: 300 26px/1.25 var(--sans); min-height: 62px; }
+@media (max-width: 760px) { .tiles { grid-template-columns: 1fr; } .tile { border-right: 0; border-bottom: 1px solid var(--rule); } h1 { font-size: 34px; } }
+</style></head>
+<body>
+<div class="screen" id="screen">
+  <header class="bar"><span class="name">Surgical Supply Link</span><span class="grow"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="143.993 108.321 551.817 164.358" width="551.82" height="164.36">
+  <g fill="#FFFFFF">
+    <path d="M147.993 161.183 L147.993 161.183 L160.293 190.500 L147.993 219.817 L178.294 190.500 L147.993 161.183 Z"/>
+    <path d="M168.122 131.866 L168.122 131.866 L192.723 190.501 L168.122 249.135 L228.725 190.501 L168.122 131.866 Z"/>
+    <path d="M210.088 112.321 L210.088 112.321 L242.889 190.501 L210.088 268.679 L290.891 190.501 L210.088 112.321 Z"/>
+  </g>
+  <g fill="#FFFFFF" fill-rule="evenodd">
+    <path d="M347.078 160.157 C345.955 158.286 342.868 156.509 339.312 156.509 C334.729 156.509 332.531 158.426 332.531 160.858 C332.531 163.712 335.899 164.508 339.828 164.975 C346.657 165.817 353.018 167.594 353.018 175.406 C353.018 182.703 346.562 185.837 339.266 185.837 C332.578 185.837 327.432 183.779 325.000 177.792 L330.145 175.125 C331.595 178.727 335.384 180.317 339.360 180.317 C343.242 180.317 346.891 178.961 346.891 175.406 C346.891 172.318 343.663 171.055 339.312 170.588 C332.624 169.793 326.450 168.015 326.450 160.672 C326.450 153.935 333.092 151.176 339.127 151.129 C344.224 151.129 349.510 152.579 351.989 157.631 L347.078 160.157 Z"/>
+    <path d="M340.417 215.544 C339.284 213.722 337.462 213.456 335.708 213.433 C333.885 213.433 330.996 214.101 330.996 216.589 C330.996 218.565 333.129 219.032 335.751 219.521 C338.751 220.099 341.862 220.632 341.862 223.988 C341.839 227.498 338.308 228.342 335.708 228.342 C333.285 228.342 330.529 227.342 329.330 224.965 L330.396 224.432 C331.352 226.320 333.797 227.254 335.708 227.254 C337.618 227.254 340.661 226.721 340.661 223.965 C340.685 221.632 338.106 221.120 335.552 220.632 C332.707 220.077 329.797 219.499 329.797 216.632 C329.730 213.345 333.152 212.322 335.708 212.322 C337.929 212.322 339.862 212.678 341.396 214.966 L340.417 215.544 Z"/>
+    <path d="M378.183 220.322 C378.204 223.833 380.426 227.255 384.848 227.255 C389.292 227.255 391.537 223.833 391.537 220.322 C391.537 216.722 389.314 213.412 384.848 213.412 C380.383 213.412 378.161 216.656 378.183 220.322 M392.693 220.343 C392.669 224.432 390.070 228.364 384.848 228.364 C379.627 228.364 377.005 224.411 377.005 220.299 C377.005 216.123 379.606 212.301 384.848 212.301 C390.093 212.301 392.714 216.144 392.693 220.343 Z"/>
+    <path d="M385.901 152.251H392.028V184.994H385.901Z Z"/>
+    <path d="M432.068 152.251 L432.068 179.287 L448.907 179.287 L448.907 184.994 L425.894 184.994 L425.894 152.251 L432.068 152.251 Z"/>
+    <path d="M430.008 219.943 L438.962 219.943 L438.962 221.078 L430.008 221.078 L430.008 228.120 L428.808 228.120 L428.808 212.546 L439.274 212.546 L439.274 213.746 L430.008 213.746 L430.008 219.943 Z"/>
+    <path d="M480.306 213.634 L474.685 213.634 L474.685 212.567 L487.127 212.567 L487.127 213.634 L481.505 213.634 L481.505 228.098 L480.306 228.098 L480.306 213.634 Z"/>
+    <path d="M508.125 152.298 L508.125 171.055 C508.125 180.737 502.184 185.696 493.952 185.696 C486.094 185.696 479.404 180.925 479.404 171.055 L479.404 152.298 L485.532 152.298 L485.532 171.055 C485.532 176.949 488.900 180.082 493.998 180.082 C499.097 180.082 501.997 176.668 501.997 171.055 L501.997 152.298 L508.125 152.298 Z"/>
+    <path d="M532.980 212.545 L533.646 212.545 L538.402 226.766 L543.223 212.545 L544.512 212.545 L539.024 228.143 L537.734 228.143 L535.269 220.855 L533.314 214.700 L531.359 220.810 L528.870 228.143 L527.581 228.143 L522.137 212.545 L523.403 212.545 L528.203 226.766 L532.980 212.545 Z"/>
+    <path d="M548.446 158.005 L548.446 168.483 L557.847 168.483 C561.776 168.483 563.461 165.862 563.461 163.243 C563.461 160.624 561.730 158.005 557.847 158.005 L548.446 158.005 M571.272 184.994 L563.928 184.994 L554.385 174.049 L548.446 174.049 L548.446 184.994 L542.271 184.994 L542.271 152.204 C547.464 152.204 552.656 152.251 557.847 152.251 C565.565 152.298 569.634 157.443 569.634 163.103 C569.634 167.594 567.577 172.131 561.356 173.394 L571.272 184.573 L571.272 184.994 Z"/>
+    <path d="M590.065 223.165 L585.889 213.700 L581.711 223.165 L590.065 223.165 M592.243 228.098 L590.532 224.277 L581.244 224.277 L579.556 228.098 L578.267 228.098 L585.245 212.545 L586.555 212.545 L593.532 228.098 L592.243 228.098 Z"/>
+    <path d="M631.565 152.298 L631.565 171.055 C631.565 180.737 625.624 185.696 617.391 185.696 C609.533 185.696 602.844 180.925 602.844 171.055 L602.844 152.298 L608.972 152.298 L608.972 171.055 C608.972 176.949 612.340 180.082 617.438 180.082 C622.537 180.082 625.437 176.668 625.437 171.055 L625.437 152.298 L631.565 152.298 Z"/>
+    <path d="M630.007 221.077 L635.517 221.077 C638.227 221.077 639.428 219.544 639.449 217.367 C639.471 215.544 638.227 213.656 635.650 213.656 L630.007 213.656 L630.007 221.077 M641.205 228.098 L639.627 228.098 L634.249 222.210 L630.007 222.210 L630.007 228.098 L628.806 228.098 L628.806 212.546 L635.650 212.546 C639.028 212.546 640.738 214.966 640.760 217.389 C640.783 219.921 639.115 222.143 635.716 222.143 L641.205 228.098 Z"/>
+    <path d="M685.870 160.157 C684.747 158.286 681.660 156.509 678.105 156.509 C673.521 156.509 671.323 158.426 671.323 160.858 C671.323 163.712 674.691 164.508 678.620 164.975 C685.449 165.817 691.810 167.594 691.810 175.406 C691.810 182.703 685.355 185.837 678.058 185.837 C671.370 185.837 666.224 183.779 663.792 177.792 L668.938 175.125 C670.388 178.727 674.177 180.317 678.152 180.317 C682.034 180.317 685.683 178.961 685.683 175.406 C685.683 172.318 682.456 171.055 678.105 170.588 C671.417 169.793 665.242 168.015 665.242 160.672 C665.242 153.935 671.884 151.176 677.919 151.129 C683.016 151.129 688.302 152.579 690.781 157.631 L685.870 160.157 Z"/>
+    <path d="M677.659 219.722 L686.769 219.722 L686.769 220.810 L677.659 220.810 L677.659 226.942 L687.480 226.942 L687.480 228.098 L676.481 228.098 L676.481 212.545 L687.213 212.545 L687.213 213.679 L677.659 213.679 L677.659 219.722 Z"/>
+  </g>
+</svg>
+</header>
+  <main class="gate" id="gate">
+    <h1>Surgical Supply Link</h1>
+    <p class="lead">Confidential concept prototype. Enter the password you received to open it.</p>
+    <form id="form" autocomplete="off">
+      <input id="pw" type="password" aria-label="Password" placeholder="Password" autofocus>
+      <button id="go" type="submit">Open</button>
+    </form>
+    <p class="msg" id="msg" role="status"></p>
+  </main>
+  <main class="tiles" id="menu" hidden>
+    <button class="tile" id="tApp" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3zM3 8.5h18M9 20h6M12 17v3M6.5 11.5h5M6.5 14h3M14 11.5h3.5v3H14z"/></svg><span>Open the prototype<small>The working app with a simulated day</small></span></button>
+    <button class="tile" id="tVid" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM10 9.2v5.6l5-2.8z"/></svg><span>Watch the demo video<small>Two minutes, recorded in the working app</small></span></button>
+  </main>
+  <footer class="foot">Concept prototype, November 2026. Synthetic data, no hospital system connected. Confidential, © 2026 Silurus Software.</footer>
+</div>
+<iframe id="app" title="Surgical Supply Link prototype" hidden></iframe>
+<div id="vid" hidden>
+  <div class="vbar"><span class="t" id="vTitle"></span><button id="vPrev" type="button">Previous</button><button id="vNext" type="button">Next</button><button id="vClose" type="button">Close</button></div>
+  <video id="v" controls playsinline></video>
+  <div class="vcap" id="vCap"></div>
+</div>
+<script>
+const SALT = Uint8Array.from(atob("5PtNVd/VHcw14siaddLy6g=="), c => c.charCodeAt(0)), ITER = 600000;
+const CLIPS = [{ f: "film", n: "", type: "video/mp4", cap: [[0, ""]] }];
+const $ = id => document.getElementById(id);
+let KEY = null, cur = 0; const urls = {};
+async function deriveKey(pw) {
+  const m = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", salt: SALT, iterations: ITER, hash: "SHA-256" }, m, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+}
+async function open(url) {
+  const r = await fetch(url); if (!r.ok) throw new Error("load");
+  const b = new Uint8Array(await r.arrayBuffer());
+  return crypto.subtle.decrypt({ name: "AES-GCM", iv: b.slice(0, 12) }, KEY, b.slice(12));
+}
+$("form").addEventListener("submit", async e => {
+  e.preventDefault(); const pw = $("pw").value.trim(); if (!pw) return;
+  $("go").disabled = true; $("msg").className = "msg"; $("msg").textContent = "Checking the password";
+  try { KEY = await deriveKey(pw); await open("check.bin"); $("gate").hidden = true; $("menu").hidden = false; $("tApp").focus(); }
+  catch (x) { KEY = null; $("msg").className = "msg err"; $("msg").textContent = x.message === "load" ? "The page could not load its files. Check the connection and try again." : "That password does not open the prototype."; $("pw").select(); }
+  $("go").disabled = false;
+});
+$("tApp").addEventListener("click", async () => {
+  const f = $("app");
+  if (!f.src) { $("tApp").disabled = true; const html = new TextDecoder().decode(await open("app.bin")); f.src = URL.createObjectURL(new Blob([html], { type: "text/html" })); $("tApp").disabled = false; }
+  f.hidden = false; $("screen").hidden = true;
+});
+async function play(i) {
+  cur = i; const c = CLIPS[i], v = $("v");
+  $("vTitle").textContent = "Surgical Supply Link, demo video"; $("vCap").textContent = c.cap[0][1]; $("vCap").hidden = !c.cap[0][1]; $("vPrev").hidden = $("vNext").hidden = CLIPS.length < 2;
+  $("vPrev").disabled = i === 0; $("vNext").disabled = i === CLIPS.length - 1;
+  if (!urls[c.f]) urls[c.f] = URL.createObjectURL(new Blob([await open("v/" + c.f + ".bin")], { type: c.type || "video/webm" }));
+  if (cur !== i) return;
+  v.src = urls[c.f]; v.play().catch(() => {});
+}
+function showVideo() { $("vid").hidden = false; play(0); }
+function hideVideo() { $("v").pause(); $("vid").hidden = true; }
+$("tVid").addEventListener("click", showVideo);
+$("vClose").addEventListener("click", hideVideo);
+$("vPrev").addEventListener("click", () => play(cur - 1));
+$("vNext").addEventListener("click", () => play(cur + 1));
+$("v").addEventListener("ended", () => { if (cur < CLIPS.length - 1) play(cur + 1); });
+$("v").addEventListener("timeupdate", () => { const c = CLIPS[cur].cap, t = $("v").currentTime; let s = c[0][1]; for (const x of c) if (t >= x[0]) s = x[1]; if ($("vCap").textContent !== s) $("vCap").textContent = s; });
+window.addEventListener("message", e => { if (e.data === "ssl-video" && KEY) showVideo(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("vid").hidden) hideVideo(); });
+</script>
+</body></html>
